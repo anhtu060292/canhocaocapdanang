@@ -336,4 +336,163 @@ button:hover, .btn:hover {
   40%, 80% { transform: translateX(3px); }
 }
 
+/
+/*thiết kế menu
+/* Cấu hình chung cho menu */
+/* Style cho body */
+
+
+
+/* 122122121 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nút hamburger (menu) */
+.menu-btn {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  display: none; /* Ẩn đi trên desktop */
+}
+
+/* Style cho menu Canvas */
+
+.menu-btn {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  display: block;
+  z-index: 2000; /* Đảm bảo nút hamburger nằm trên các phần tử khác */
+}
+
+
+.canvas-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Menu ẩn bên phải */
+  width: 250px;
+  height: 100%;
+  background-color: #333; /* Màu nền menu */
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1000; /* Đảm bảo menu nằm trên các phần tử khác */
+}
+
+.canvas-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.canvas-menu ul li {
+  padding: 12px 16px;
+  text-align: center;
+}
+
+/* Màu chữ cho các mục menu (đổi thành màu xanh) */
+.canvas-menu ul li a {
+  text-decoration: none;
+  color: #007bff; /* Màu xanh (bạn có thể thay đổi mã màu này nếu cần) */
+  font-size: 20px;
+  display: block;
+  transition: 0.3s; /* Thêm hiệu ứng khi di chuột qua */
+}
+
+/* Hiệu ứng hover khi di chuột qua */
+.canvas-menu ul li a:hover {
+  background-color: #575757; /* Màu nền khi hover */
+  color: #ffffff; /* Màu chữ khi hover */
+}
+
+/* Khi menu có lớp active sẽ hiển thị */
+.canvas-menu.active {
+  right: 0;
+}
+
+/* Menu sẽ hiển thị cố định trên desktop */
+@media screen and (min-width: 769px) {
+  .menu-btn {
+      display: none; /* Ẩn nút hamburger trên màn hình lớn */
+  }
+  
+  .canvas-menu {
+      position: static; /* Menu sẽ hiển thị bình thường */
+      height: auto;
+      width: 100%;
+      background-color: transparent;
+      display: flex;
+      justify-content: space-around;
+  }
+
+  .canvas-menu ul {
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+  }
+
+  .canvas-menu ul li {
+      padding: 0;
+  }
+
+  .canvas-menu ul li a {
+      font-size: 18px;
+      padding: 10px;
+      color: #007bff; /* Màu xanh cho desktop */
+  }
+}
+
+/* Menu chỉ hiển thị trên điện thoại (screen nhỏ) */
+@media screen and (max-width: 768px) {
+  .menu-btn {
+      display: block; /* Hiển thị nút hamburger trên màn hình nhỏ */
+  }
+
+  .canvas-menu {
+      position: fixed;
+      right: -250px;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #333; /* Màu nền tối cho điện thoại */
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+  }
+
+  .canvas-menu ul {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  .canvas-menu ul li {
+      padding: 12px 16px;
+      text-align: center;
+  }
+
+  .canvas-menu ul li a {
+      text-decoration: none;
+      color: #007bff; /* Màu xanh cho điện thoại */
+      font-size: 20px;
+      display: block;
+  }
+
+  /* Hiệu ứng hover cho các mục trong menu trên điện thoại */
+  .canvas-menu ul li a:hover {
+      background-color: #575757; /* Màu nền khi hover */
+      color: #ffffff; /* Màu chữ khi hover */
+  }
+}
+
+
+
+
+
+
 

@@ -5,28 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tú Home Land Đà Nẵng</title>
     <link rel="stylesheet" href="style.css">
- 
+    <script src="script.js"></script>
+    
     
 </head>
 <body>
     <header>
+
+
         <div class="container">
             <div class="logo">
                 <img src="images/Untitled-0.png" alt="Tú Homeland Đà Nẵng">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#trangchu">Trang Chủ</a></li>
-                    <li><a href="#gioithieu">Giới Thiệu</a></li>
-                    <li><a href="#vitri">Vị Trí</a></li>
-                    <li><a href="#tienich">Tiện Ích</a></li>
-                    <li><a href="#matbang">Mặt Bằng & Thiết Kế</a></li>
-                    <li><a href="#thanhtoan">Thanh Toán</a></li>
-                    <li><a href="#tiendo">Tiến Độ</a></li>
-                    <li><a href="#lienhe">Liên Hệ</a></li>
-                </ul>
-            </nav>
-        </div>
+               <!-- Nút mở menu -->
+    <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+
+    <!-- Menu Canvas -->
+    <div id="menu" class="canvas-menu">
+        <ul>
+            <li><a href="#trangchu">Trang Chủ</a></li>
+            <li><a href="#gioithieu">Giới Thiệu</a></li>
+            <li><a href="#vitri">Vị Trí</a></li>
+            <li><a href="#tienich">Tiện Ích</a></li>
+            <li><a href="#matbang">Mặt Bằng</a></li>
+            <li><a href="#thanhtoan">Thanh Toán</a></li>
+            <li><a href="#tiendo">Tiến Độ</a></li>
+            <li><a href="#lienhe">Liên Hệ</a></li>
+        </ul>
+    </div>
+
+
+
+
     </header>
     <section id="trangchu" class="content">
         <div class="container">
@@ -98,13 +108,13 @@
         <h2>3. Tiện Ích</h2>
         <h3>* Nội Khu</h3>
         <ul>
-            <li>- Quảng trường</li>
-            <li>- Giàn hoa</li>
-            <li>- Đài ngắm cảnh</li>
-            <li>- BBQ</li>
-            <li>- Đường dạo bộ</li>
-            <li>- Tượng nghệ thuật</li>
-            <li>- Sân tập thể thao</li>
+            <li> Quảng trường</li>
+            <li> Giàn hoa</li>
+            <li> Đài ngắm cảnh</li>
+            <li> BBQ</li>
+            <li> Đường dạo bộ</li>
+            <li> Tượng nghệ thuật</li>
+            <li> Sân tập thể thao</li>
         </ul>
         <div class="image-gallery">
             <img src="images/tien ich phao hoa.jpg" alt="Ảnh 1" class="thumbnail" onclick="openLightbox(this)">
@@ -118,13 +128,13 @@
 </div>
         <h3>* Khối Cao Tầng</h3>
         <ul>
-            <li>- Bể bơi vô cực</li>
-            <li>- Bể bơi trẻ em</li>
-            <li>- Bể bơi trong nhà</li>
-            <li>- Nhà trẻ</li>
-            <li>- Lounge</li>
-            <li>- Gym, spa</li>
-            <li>- Kid Club</li>
+            <li> Bể bơi vô cực</li>
+            <li> Bể bơi trẻ em</li>
+            <li> Bể bơi trong nhà</li>
+            <li> Nhà trẻ</li>
+            <li> Lounge</li>
+            <li> Gym, spa</li>
+            <li> Kid Club</li>
         </ul>
     </section>
     
@@ -339,7 +349,31 @@
             window.open(zaloUrl, "_blank"); // Mở Zalo trong tab mới
         }
     </script>
+
+
+
+
+<script>
+    // Hàm để mở/đóng menu
+    function toggleMenu() {
+        var menu = document.getElementById('menu'); // Lấy đối tượng menu
+        // Thêm hoặc bỏ lớp 'active' để hiển thị/ẩn menu
+        menu.classList.toggle('active');
+    }
+</script>
+
+
+<script>// Hàm để đóng menu nếu nhấn ra ngoài menu
+    document.addEventListener('click', function(event) {
+      var menu = document.getElementById('menu');
+      var menuButton = document.querySelector('.menu-btn');
     
-   
+      // Kiểm tra nếu người dùng nhấn ngoài menu và nút hamburger
+      if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+        menu.classList.remove('active');
+      }
+    });</script>
+
+
 </body>
 </html>

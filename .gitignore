@@ -1,0 +1,25 @@
+# Bỏ qua tất cả các thư mục hệ thống của Windows
+Desktop.ini
+Thumbs.db
+$RECYCLE.BIN/
+System Volume Information/
+NTUSER.*
+
+# Bỏ qua các thư mục của Windows
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+Pictures/
+Saved Games/
+Searches/
+Videos/
+
+# Bỏ qua các thư mục và file cá nhân không cần thiết
+.vscode/
+*.lnk
+*.tmp
+*.psd
+*.docx
+*.xlsx
